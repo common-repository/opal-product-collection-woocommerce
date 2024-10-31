@@ -1,0 +1,191 @@
+/*-------------------------------------------------------------
+1. Mixin
+--------------------------------------------------------------*/
+:root {
+  --opcw-primary-color: #172a68;
+  --opcw-secondary-color: #f25a87;
+  --opcw-border-color: #cccccc;
+  --opcw-shadow-color: #36b97e;
+}
+
+.opcw_hidden {
+  display: none !important;
+}
+
+.opcw-flex {
+  display: flex;
+}
+
+.opcw_flex_row_reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.opcw_flex_align_items_center {
+  align-items: center;
+}
+
+.opcw_flex_align_items_start {
+  align-items: flex-start;
+}
+
+.opcw_flex_align_items_end {
+  align-items: flex-end;
+}
+
+.opcw_flex_justify_content_center {
+  justify-content: center;
+}
+
+.opcw_flex_justify_content_start {
+  justify-content: flex-start;
+}
+
+.opcw_flex_justify_content_end {
+  justify-content: flex-end;
+}
+
+.mt {
+  margin-top: 30px;
+}
+
+.mb {
+  margin-bottom: 30px;
+}
+
+.opcw_hidden_line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.opcw_toggle {
+  cursor: pointer;
+  display: inline-flex;
+  margin: 5px 0;
+  align-items: center;
+}
+.opcw_toggle .opcwv_toggle_input {
+  position: absolute;
+  visibility: hidden;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.opcw_toggle .opcwv_toggle_input:checked + .opcw_toggle_switch {
+  background: var(--opcw-primary-color);
+}
+.opcw_toggle .opcwv_toggle_input:checked + .opcw_toggle_switch::before {
+  left: 23px;
+}
+.opcw_toggle .opcw_toggle_switch {
+  display: inline-block;
+  background: rgba(10, 9, 89, 0.08);
+  border-radius: 16px;
+  width: 46px;
+  height: 26px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+  margin-right: 15px;
+}
+.opcw_toggle .opcw_toggle_switch::before {
+  display: block;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 3px;
+  transition: all 0.25s ease;
+  content: "";
+}
+
+#adminmenu .wp-submenu a[href="edit-tags.php?taxonomy=opcw-collection&post_type=product"] {
+  background-color: var(--opcw-primary-color);
+}
+#adminmenu .wp-submenu a[href="edit-tags.php?taxonomy=opcw-collection&post_type=product"]:hover {
+  color: var(--opcw-secondary-color);
+}
+
+/* TRIPLE SPINNER */
+.triple-spinner {
+  display: block;
+  position: relative;
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top: 4px solid #FF5722;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+.triple-spinner::before,
+.triple-spinner::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 4px solid transparent;
+}
+
+.triple-spinner::before {
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-top-color: #FF9800;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3.5s linear infinite;
+}
+
+.triple-spinner::after {
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-top-color: #FFC107;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.75s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/*-------------------------------------------------------------
+2. Frontend Render
+--------------------------------------------------------------*/

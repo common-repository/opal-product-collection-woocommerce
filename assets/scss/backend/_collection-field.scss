@@ -1,0 +1,243 @@
+.opcw_selected_image {
+	position: relative;
+	border: 1px solid #ccc;
+	margin-top: 10px;
+	border-radius: 5px;
+	width: 95%;
+	overflow: hidden;
+	
+	.opcw_selected_image_img {
+		padding: 20px;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
+	.opcw_remove_image {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 20px;
+		height: 20px;
+		line-height: 20px;
+		display: inline-block;
+		background-color: #c0001a;
+		color: #fff;
+		text-align: center;
+		cursor: pointer;
+	}
+}
+
+
+.opcw_rules_box {
+	display: flex;
+	position: relative;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 0 0 20px 0;
+	background-color: #e4e4e4;
+	padding: 15px 40px 10px 15px;
+	border-radius: 5px;
+	overflow: hidden;
+	.rule_action_btn {
+		position: absolute;
+		right: 10px;
+		top: 35px;
+	}
+	.option_item {
+		flex: 0 0 calc(50% - 5px);
+		max-width: calc(50% - 5px);
+		margin-bottom: 10px;
+		&:nth-child(n+3) {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+	.opcw_setting_field {
+		max-width: 100%;
+		width: 100% !important;
+		font-size: 13px;
+	}
+	.opcw_setting_form {
+		max-width: 100%;
+		margin: 0;
+		label {
+			margin-bottom: 5px;
+			display: block;
+		}
+	}
+
+}
+
+table.wp-list-table .column-taxonomy-opcw-collection {
+	width: 11%;
+}
+
+// Process Scanning
+#opcw_process_box {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	background-color: rgba(0,0,0,0.5);
+	padding: 15px;
+}
+.opcw_wrapper_process {
+	width: 600px;
+	background-color: #fff;
+	max-width: 100%;
+	border-radius: 5px;
+	padding: 20px;
+}
+
+.opcw_title_process {
+	margin: 0 0 10px;
+	color: var(--opcw-primary-color);
+	& + p {
+		margin: 0 0 20px;
+		color: #c0001a;
+	}
+}
+
+.opcw_inner_process {
+	padding: 20px;
+	border: 1px dashed #ccc;
+	border-radius: 5px;
+}
+
+.opcw_header_process {
+	display: flex;
+	grid-gap: 20px;
+}
+
+.opcw_main_process {
+	border-bottom: 1px solid #ebebeb;
+	padding-bottom: 20px;
+
+	#opcw_list_process {
+		padding-right: 10px;
+		max-height: 500px;
+		overflow-y: auto;
+		.opcw_item_process {
+			margin-top: 15px;
+			padding-top: 10px;
+			border-top: 1px dashed #ebebeb;
+			.opcw_resuilt_scan {
+				display: flex;
+				grid-gap: 50px;
+				margin-bottom: 10px;
+				.opcw_term_scan {
+					margin: 0;
+				}
+			}
+			.opcw_wrap_scan {
+				display: flex;
+				align-items: center;
+			}
+			.opcw_stop_process {
+				text-decoration: none;
+				background-color: #c0001a;
+				color: #fff;
+				margin-left: 15px;
+				border-radius: 5px;
+				opacity: 0.5;
+				pointer-events: none;
+			}
+			&.is-scanning {
+				.opcw_stop_process {
+					opacity: 1;
+					pointer-events: initial;
+				}
+			}
+			&.is-finished {
+				.opcw_stop_process {
+					background-color: var(--opcw-shadow-color);
+					opacity: 1;
+					.dashicons::before {
+						content: '\f15e';
+					}
+				}
+			}
+		}
+	}
+
+	.opcw_process_bar {
+		flex: 1;
+		height: 30px;
+		background-color: #ddd;
+		border-radius: 2px;
+		overflow: hidden;
+		position: relative;
+		&  > span:first-child {
+			display: block;
+			position: absolute;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background-color: var(--opcw-shadow-color);
+			transition: all 0.2s linear;
+		}
+		.opcw_data_process {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			color: #000;
+		}
+		
+	}
+}
+
+.opcw_action_process {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	grid-gap: 10px;
+}
+
+.opcw_tag_title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 95%;
+}
+#opcw_import_collection {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	z-index: 999999;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+#opcw-form-import-collection {
+	width: 500px;
+	max-width: calc(100vw - 20px);
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	.opcw_group_option {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 30px;
+		h3 {
+			margin: 0 0 15px 0;
+		}
+		img {
+			margin-right: 15px;
+		}
+	}
+	.opcw_action_button {
+		display: flex;
+		justify-content: center;
+		grid-gap: 10px;
+	}
+}
